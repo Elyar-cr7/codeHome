@@ -1,0 +1,31 @@
+<application>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="/usr/local/bin/node" />
+  </component>
+  <component name="RefactoringSettings">
+    <option name="MOVE_SEARCH_IN_COMMENTS" value="false" />
+    <option name="MOVE_SEARCH_FOR_TEXT" value="false" />
+    <option name="INTRODUCE_LOCAL_CREATE_FINALS" value="false" />
+  </component>
+  <component name="SvnApplicationSettings">
+    <option name="myCheckoutURLs">
+      <list>
+        <option value="svn://10.0.0.60/lgpay/doc" />
+        <option value="http://svn://139.199.250.69/lgpay/doc/3.产品需求/商户服务平台/商户app/20200608_线上店铺迭代" />
+      </list>
+    </option>
+    <option name="myTypedURLs">
+      <list>
+        <option value="http://svn/139.199.250.69/lgpa" />
+        <option value="svn://10.0.0.60/lgpay/doc" />
+        <option value="http://svn/10.0.0.60/lgpay/doc" />
+        <option value="http://svn/139.199.250.69/lgpay/doc/" />
+        <option value="http://svn://139.199.250.69/lgpay/doc/" />
+        <option value="http://svn/139.199.250.69/lgpay/doc" />
+        <option value="http://svn://139.199.250.69/lgpay/doc/3.产品需求/商户服务平台/商户app/20200608_线上店铺迭代" />
+        <option value="http://139.199.250.69" />
+        <option value="svn://182.61.55.204/aizhuang1" />
+      </list>
+    </option>
+  </component>
+</application>
