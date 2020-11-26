@@ -9,7 +9,39 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>myProject-dao</name>
     <artifactId>myProject-dao</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.elyar</groupId>
+            <artifactId>myProject-common</artifactId>
+            <version>1.0.0</version>
+
+        </dependency>
+
+        <!-- 数据库相关 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.8.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+
+
+
+    </dependencies>
 
 </project>

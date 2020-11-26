@@ -13,8 +13,8 @@
         <module>myProject-security</module>
         <module>myProject-web</module>
         <module>myProject-dao</module>
-        <module>myProject-common</module>
     </modules>
+
 
 
     <parent>
@@ -24,157 +24,182 @@
         <relativePath></relativePath>
     </parent>
 
+    <properties>
+        <myProject_common.version>1.0.0</myProject_common.version>
+        <myProject_dao.version>1.0.0</myProject_dao.version>
+        <myProject_security.version>1.0.0</myProject_security.version>
+        <myProject_web.version>1.0.0</myProject_web.version>
+        <swagger.version>2.9.2</swagger.version>
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
+        <hutool.version>5.1.4</hutool.version>
+        <junit.version>4.12</junit.version>
+        <lombok.version>1.18.12</lombok.version>
+        <hutool.version>5.1.4</hutool.version>
+        <jasypt.version>2.1.0</jasypt.version>
+        <commons.lang.version>2.6</commons.lang.version>
+        <p6spy.version>3.8.5</p6spy.version>
+        <kaptcha.version>0.0.9</kaptcha.version>
+        <guava.version>29.0-jre</guava.version>
+        <jjwt.version>0.10.6</jjwt.version>
+        <tencentcloud.version>3.1.97</tencentcloud.version>
+        <cos_api.version>5.6.8</cos_api.version>
+    </properties>
+
+
     <dependencies>
-        <!-- quartz依赖 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-quartz</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+    <dependencies>
+        <!--模块-->
+        <dependency>
+            <groupId>cn.elyar</groupId>
+            <artifactId>myProject-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.elyar</groupId>
+            <artifactId>myProject-dao</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.elyar</groupId>
+            <artifactId>myProject-security</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.elyar</groupId>
+            <artifactId>myProject-web</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
-        <!--redis-->
+        <!-- swagger ui start -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>2.7.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
             <exclusions>
                 <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <!--发送邮件-->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-email</artifactId>
-            <version>1.5</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4.7</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alipay.sdk</groupId>
-            <artifactId>alipay-sdk-java</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.72</version>
-        </dependency>
-        <!--swagger-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
+            <version>${swagger.version}</version>
         </dependency>
-        <!--springSecurity-->
-        <!-- <dependency>
-             <groupId>org.springframework.security</groupId>
-             <artifactId>spring-security-config</artifactId>
-             <version>4.2.2.RELEASE</version>
-         </dependency>-->
-        <!--JWT-->
-        <!-- <dependency>
-             <groupId>com.auth0</groupId>
-             <artifactId>java-jwt</artifactId>
-             <version>3.10.1</version>
-         </dependency>
-         <dependency>
-             <groupId>io.jsonwebtoken</groupId>
-             <artifactId>jjwt</artifactId>
-             <version>0.9.1</version>
-         </dependency>
-         <dependency>
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-starter-security</artifactId>
-         </dependency>-->
+        <!--替换2版本的注解-->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.21</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>1.5.21</version>
+        </dependency>
+        <!-- swagger ui end -->
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
-        <!-- <dependency>
-             <groupId>io.jsonwebtoken</groupId>
-             <artifactId>jjwt</artifactId>
-             <version>0.9.1</version>
-         </dependency>-->
-        <!-- Hutool是一个小而全的Java工具类库 -->
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.0.3</version>
-        </dependency>
-        <!-- lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.22</version>
-        </dependency>
-        <!--mybatis-plus-->
+        <!-- mybatisplus -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.2</version>
+            <version>${mybatis-plus.version}</version>
         </dependency>
-        <!--mysql连接处-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.0.11</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>protobuf-java</artifactId>
+                    <groupId>com.google.protobuf</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
-        <!--slf4j日志-->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.6.4</version>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>${p6spy.version}</version>
         </dependency>
-        <!--AspectJ-->
-        <!-- <dependency>
-             <groupId>aspectj</groupId>
-             <artifactId>aspectjrt</artifactId>
-             <version>1.5.4</version>
-         </dependency>-->
         <dependency>
-            <groupId> org.aspectj</groupId >
-            <artifactId> aspectjweaver</artifactId >
-            <version> 1.6.11</version >
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>${jasypt.version}</version>
         </dependency>
 
+        <!--tencent sdk-->
+        <dependency>
+            <groupId>com.tencentcloudapi</groupId>
+            <artifactId>tencentcloud-sdk-java</artifactId>
+            <!-- 请到 https://search.maven.org/search?q=tencentcloud-sdk-java 查询最新版本 -->
+            <version>${tencentcloud.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.qcloud</groupId>
             <artifactId>cos_api</artifactId>
-            <version>5.6.7</version>
+            <version>${cos_api.version}</version>
         </dependency>
-        <!--阿里云java-SDK-->
+
+        <!--工具-->
         <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>aliyun-java-sdk-core</artifactId>
-            <version>4.5.3</version>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons.lang.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+        <!--jwt-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <version>2.1.2.RELEASE</version>
         </dependency>
 
     </dependencies>
+    </dependencyManagement>
+
 
 </project>

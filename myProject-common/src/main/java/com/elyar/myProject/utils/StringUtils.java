@@ -1,7 +1,8 @@
 package com.elyar.myProject.utils;
 
-import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 
+
+import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Calendar;
