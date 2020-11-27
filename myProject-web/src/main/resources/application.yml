@@ -17,5 +17,5 @@ spring:
 # mybatis-plus
 mybatis-plus:
   mapper-locations:
-    -classpath:cn/elyar/myProject/dao/mapper/xml/*Mapper.xml
+    -classpath:cn/elyar/myProject/mapper/xml/*Mapper.xml
 
