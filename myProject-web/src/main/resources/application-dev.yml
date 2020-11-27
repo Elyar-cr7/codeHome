@@ -1,0 +1,27 @@
+#端口号
+server:
+  port: 8088
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.util.DriverDataSource
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://47.99.205.104:3306/myDataBase?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 12345678
+    hikari:
+          pool-name: hikari
+          minimum-idle: 5
+          maximum-pool-size: 15
+          idle-timeout: 600000
+          max-lifetime: 1800000
+          connection-timeout: 15000
+          auto-commit: true
+
+
+  redis:
+    host: 47.99.205.104
+    port: 6379
+    database: 0
+    password:
+

@@ -13,8 +13,5 @@
         <module name="myProject-web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="myProject-common" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

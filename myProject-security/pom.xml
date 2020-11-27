@@ -16,8 +16,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.pocket.cater</groupId>
-            <artifactId>pocket-cater-common</artifactId>
+            <groupId>cn.elyar</groupId>
+            <artifactId>myProject-common</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>

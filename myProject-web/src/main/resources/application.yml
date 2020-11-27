@@ -1,0 +1,21 @@
+#定义： server.servlet.context-path= # Context path of the application. 应用的上下文路径，也可以称为项目路径，是构成url地址的一部分。
+ #
+ #server.servlet.context-path不配置时，默认为 / ，如：localhost:8080/xxxxxx
+ #
+ #当server.servlet.context-path有配置时，比如 /demo，此时的访问方式为localhost:8080/demo/xxxxxx
+server:
+  servlet:
+    context-path: /project
+
+spring:
+  profiles:
+    active: dev
+
+
+
+
+# mybatis-plus
+mybatis-plus:
+  mapper-locations:
+    -classpath:cn/elyar/myProject/dao/mapper/xml/*Mapper.xml
+
